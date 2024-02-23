@@ -71,11 +71,13 @@ h4 {
     margin-bottom: 0px;
     font-size: 14px;
     font-weight: 400;
+    color: #29334E;
 }
 
 h1 {
     font-size: 40px;
     font-weight: 700;
+    color: #29334E;
     margin: 0px;
 }
 
@@ -83,11 +85,13 @@ p {
     margin: 0px;
     font-size: 14px;
     font-weight: 400;
+    color: #29334E;
 }
 
 .weather-condition {
     font-size: 14px;
     font-weight: 400;
+    color: #29334E;
 
 }
 
@@ -100,6 +104,7 @@ span {
 #description {
     font-weight: 400;
     font-size: 14px;
+    color: #29334E;
 }
 
 .weather-temperature-container {
@@ -115,12 +120,22 @@ span {
     font-size: 140px;
     font-weight: 800;
     margin-left: 15px;
+    color: #29334E;
 }
 
 .weather-app-unit {
     font-size: 22px;
     font-weight: 500;
     margin-top: 45px;
+    color: #29334E;
+}
+
+.weather-forecast {
+    text-align: center;
+}
+
+.weather-forecast-date {
+    color: #29334E;
 }
 
 footer {
