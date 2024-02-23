@@ -140,12 +140,12 @@ span {
 
 .weather-forecast-date {
     color: #29334E;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
 }
 
 .weather-forecast-icon {
     transform: scale(0.6);
-    margin-bottom: -10px;
+    margin-bottom: -20px;
 }
 
 .forecast-temperature-max {
