@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Météo App</title>
+  </head>
+  <body>
+    <div class="weather-app-container">
+      <header>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city…"
+            class="search-input-text"
+            id="search-input-text"
+          />
+          <input type="submit" value="Search" class="search-input-button" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-data">
+          <div>
+            <h4 id="time"></h4>
+            <h1></h1>
+            <p>
+              <div class="weather-condition">
+                Wind: <span id="wind"></span>, Humidity: <span id="humidity"></span>
+              </div>
+              <div id="description"></div>
+            </p>
+          </div>
+          <div class="weather-temperature-container">
+            <div id="icon"></div>
+            <div class="weather-app-temperature"></div>
+            <div class="weather-app-unit">°C</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p class="footer-text">
+          This project was coded by
+          <a href="https://github.com/salomeIsCoding" target="_blank">Salomé Erard</a>, is
+          <a href="https://github.com/salomeIsCoding/MeteoApp" target="_blank">open-sourced on Github</a> and
+          <a href="https://app.netlify.com/sites/meteo-app-shecodes-w7/overview" target="_blank">and hosted on Netlify </a>
+        </p>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
