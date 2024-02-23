@@ -61,3 +61,27 @@ function formatDate (date) {
     let day = days[date.getDay()];
     return `${day}, ${hours}:${minutes}`;
 }
+
+function displayForecast(){
+    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHtml ="";
+    
+    days.forEach(function(day) {
+        forecastHtml = forecastHtml +
+        `<div class="col-1">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-icon">☀️</div>
+            <div class="weather-forecast-temperatures">
+                <span class="forecast-temperature-max">18° </span>
+                <span class="forecast-temperature-min">5°</span>
+            </div>
+        </div>`;
+        
+    });
+    
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
+

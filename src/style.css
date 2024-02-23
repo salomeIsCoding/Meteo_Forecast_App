@@ -131,6 +131,8 @@ span {
 }
 
 .weather-forecast {
+    display: flex;
+    justify-content: space-around;
     text-align: center;
 }
 
