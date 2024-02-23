@@ -138,6 +138,14 @@ span {
     color: #29334E;
 }
 
+.forecast-temperature-max {
+    font-weight: 700;
+    color: #29334E;
+}
+
+.forecast-temperature-min {
+    color: #29334E;
+}
 footer {
     position: relative;
     left: -30px;
