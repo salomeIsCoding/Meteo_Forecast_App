@@ -8,9 +8,7 @@ function displayWeather (response) {
     let timeElement = document.querySelector("#time");
     let date = new Date(response.data.time*1000);
     let iconElement = document.querySelector("#icon");
-    
-    console.log(response.data);
-    
+        
     temperatureElement.innerHTML = temperature;
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
@@ -18,6 +16,8 @@ function displayWeather (response) {
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     timeElement.innerHTML = formatDate(date);
     iconElement.innerHTML= `<img src ="${response.data.condition.icon_url}"/>`;
+
+    getForecast(response.data.city);
 }
 
 function searchCity(city){
@@ -36,18 +36,16 @@ function searchEngine (event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchEngine);
 
-// c'est la ville qui apparaît quand la page s'ouvre
-searchCity("Berlin");
 
 function formatDate (date) {
     let minutes = date.getMinutes();
-        if (minutes < 10){
-         minutes = `0${minutes}`;
-        }
+    if (minutes < 10){
+        minutes = `0${minutes}`;
+    }
     let hours = date.getHours();
-        if (hours < 10){
-            hours = `0${hours}`;
-        }  
+    if (hours < 10){
+        hours = `0${hours}`;
+    }  
     
     let days = [
         "Sunday",
@@ -62,19 +60,27 @@ function formatDate (date) {
     return `${day}, ${hours}:${minutes}`;
 }
 
-function displayForecast(){
+// get the forecast for a city //
+function getForecast (city) {
+    let apiKey = "te659a2ao0cb8e3d11cb64043bff9883";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response){
+    console.log(response.data);
     let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHtml ="";
     
     days.forEach(function(day) {
         forecastHtml = forecastHtml +
         `<div class="col-1">
-            <div class="weather-forecast-date">${day}</div>
-            <div class="weather-forecast-icon">☀️</div>
-            <div class="weather-forecast-temperatures">
-                <span class="forecast-temperature-max">18° </span>
-                <span class="forecast-temperature-min">5°</span>
-            </div>
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">☀️</div>
+        <div class="weather-forecast-temperatures">
+        <span class="forecast-temperature-max">18° </span>
+        <span class="forecast-temperature-min">5°</span>
+        </div>
         </div>`;
         
     });
@@ -83,5 +89,7 @@ function displayForecast(){
     forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast();
+// c'est la ville qui apparaît quand la page s'ouvre
+searchCity("Berlin");
+
 
