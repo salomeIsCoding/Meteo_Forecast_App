@@ -134,10 +134,18 @@ span {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .weather-forecast-date {
     color: #29334E;
+    margin-bottom: -10px;
+}
+
+.weather-forecast-icon {
+    transform: scale(0.6);
+    margin-bottom: -10px;
 }
 
 .forecast-temperature-max {
